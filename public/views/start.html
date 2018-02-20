@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Fare-Estimate</title>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link href="https://fonts.googleapis.com/css?family=Kavivanar" rel="stylesheet">
+  <link rel="stylesheet" href="../css/main.css">
+  <link rel="shortcut icon" href="../assets/img/icon.png">
+</head>
+
+<body class="">
+  <!-- Header -->
+  <header>
+    <nav class="navbar navbar-inverse principal">
+      <div class="">
+        <div class="navbar-header">
+          <!--boton barras para la version mobile-->
+          <button type="button" class="navbar-toggle collapsed boton-hamburger" data-toggle="collapse" data-target="#navbar-1">
+            <span class="sr-only">Menu</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <!--imagen-->
+          <a class="navbar-brand" href="#">
+            <p>Fare Estimate</p>
+          </a>
+        </div>
+        <!--Menu despegable para desktop y mobile-->
+        <div class="collapse navbar-collapse" id="navbar-1">
+          <!--se posciona al lado derecho en desktop-->
+          <ul class="nav navbar-nav navbar-right">
+            <li>
+              <a href="../index.html">Regresar</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+  </header>
+  <main>
+    <div class="row"
+      <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6">
+        <div class="form-group">
+          <label for="email" class="col-xs-12 control-label">Your Ubication :</label>
+          <div class="col-xs-12">
+            <div class="input-group">
+              <span class="input-group-addon">
+                <i class="fa fa-map-marker" aria-hidden="true"></i>
+              </span>
+              <input type="text" class="form-control" name="email" id="email" placeholder="Punto de Partida" />
+            </div>
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="email" class="col-xs-12 control-label">Your Ubication :</label>
+          <div class="col-xs-12">
+            <div class="input-group">
+              <span class="input-group-addon">
+                <i class="fa fa-paper-plane" aria-hidden="true"></i>
+              </span>
+              <input type="text" class="form-control" name="email" id="email" placeholder="Punto de Partida" />
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-xs-12">
+        <div class="form-group form-btn">
+          <a href="#" target="_blank" type="button" id="button" class="btn btn-primary btn-lg btn-block login-button">Consultar</a>
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+        <div id="map">
+        </div>
+      </div>
+    </div>
+  </main>
+  <!-- Import jQuery and Bootstrap.js -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <!-- Link del script de google map -->
+  <!-- <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCZMVcemBGrPtS3Mhjh31FQaC57pjRmuwM&callback=initMap&&libraries=places"></script> -->
+  <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCZMVcemBGrPtS3Mhjh31FQaC57pjRmuwM&callback=initMap"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  <script type="text/javascript" src="../js/app.js"></script>
+</body>
+
+</html>
