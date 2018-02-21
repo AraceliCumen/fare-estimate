@@ -1,3 +1,6 @@
+var geocoder;
+var map;
+
 /* Inicializa y agrega el mapa cuando se carga la página web */
 initMap = () => {
   /* variable para la ruta */
@@ -17,7 +20,7 @@ initMap = () => {
   let marker = new google.maps.Marker({
     position: laboratoriaLima,
     map: map,
-    icon: 'assets/images/bicicleta.png'
+    icon: '\f041'
   });
 
   /* Se dibujará la ruta */
@@ -34,13 +37,14 @@ initMap = () => {
   /* Evento boton trazar ruta */
   document.getElementById('ruta').addEventListener('click', () => { 
     calculateAndDisplayRoute(directionsService, directionsDisplay);
-    getPrices();
 
     /* Visibilisando el contenedor price rate */
     document.getElementById('container-departure').classList.add('hiden');
     document.getElementById('container-form-input').setAttribute('id', 'container-new-input');
     document.getElementById('container-rate').classList.toggle('hiden');
-    document.getElementById('prices').appendChild();
+    // document.getElementById('prices').appendChild();
+
+    codeAddress();
   });
 };
 
@@ -57,9 +61,17 @@ function calculateAndDisplayRoute(directionsService, directionsDisplay) {
       window.alert('Directions request failed due to ' + status);
     }
   });
+}
 
-  /* Calcular los precios */
-  function getPrices() {
-    
-  }
+/* Calcular los precios */
+function codeAddress() {
+  /* Extraemos los valores */
+  let origin = document.getElementById('start').value;
+  let destination = document.getElementById('end').value;
+  
+  let objOrigin = 'https://maps.googleapis.com/maps/api/geocode/json?address=' + star + '+key=AIzaSyCMShnY5TzaDxqu1P0D0q6WWfbnQJ4ZC4c';
+  console.log(obj);
+
+  let objDestination = 'https://maps.googleapis.com/maps/api/geocode/json?address=' + end + 'key=AIzaSyCMShnY5TzaDxqu1P0D0q6WWfbnQJ4ZC4c';
+  console.log(obj);
 }
