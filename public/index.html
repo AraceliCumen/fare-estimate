@@ -5,32 +5,116 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <title>Fare Estimate</title>
+  <title>Fare-Estimate</title>
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
   <link href="https://fonts.googleapis.com/css?family=Kavivanar" rel="stylesheet">
-  <link rel="stylesheet" href="css/animation.css">
-  <link rel="shortcut icon" href="assets/img/icon.png">
+  <link rel="stylesheet" href="css/main.css">
+  <link rel="shortcut icon" href="assets/images/icon.png">
 </head>
 
-
-<body>
-  <br>
-  <br>
-  <br>
-  <br>
-  <br>
-  <br>
-  <div class="container">
-    <div class="row container-flex-row">
-      <div class="col-xs-12 container container-flex-column text-center">
-          <img class="img-responsive img-principal" src="assets/img/logo.png" alt="Logo">
+<body class="">
+  <!-- Header -->
+  <header>
+    <nav class="navbar navbar-default navbar-container navbar-fixed-top">
+      <div class="container-fluid">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle pull-left button-burger" data-toggle="collapse" data-target="#myNavbar">
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand pull-right navbar-logo" href="#">
+            <img alt="logo" src="assets/images/logo.png">
+          </a>
+        </div>
+        <div class="collapse navbar-collapse" id="myNavbar">
+          <ul class="nav navbar-nav navbar-right navbar-options">
+            <li>
+              <a href="#">INICIO</a>
+            </li>
+            <li>
+              <a href="#about-section">ACERCA DE MÍ</a>
+            </li>
+            <li>
+              <a href="#skills-section">HABILIDADES</a>
+            </li>
+            <li>
+              <a href="#portfolio-section">PORTAFOLIO</a>
+            </li>
+            <li>
+              <a href="#contact-section">CONTACTO</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+  </header>
+  <!-- Map Section -->
+  <section>
+    <div id="map"></div>
+    <div id="container-departure" class="col-xs-12 col-sm-6 col-md-4 col-lg-4 ">
+      <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 container-form">
+        <div class="col-xs-12 col-lg-12 margin">
+          <h2>Estimador de tarifas Uber</h2>
+          <h5>¿Cuál es el costo de viajes de Uber en tu ciudad?</h5>
+          <h5>Calcula una tarifa para tu próximo viaje</h5>
+          <h5>Simplemente ingresa un punto de partida y un destino para comenzar.</h5>
+        </div>
+      </div>
+    </div>
+    <div id="container-form-input" class="col-xs-12 col-sm-6 col-md-4 col-lg-4 ">
+      <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 container-form">
+        <div class="col-xs-12 col-lg-12 margin">
+          <form action="">
+            <div class="form-group margin-input">
+              <input type="text" class="form-control" id="start" placeholder="Ingresa el punto de partida">
+            </div>
+            <div class="input-group magin-input">
+              <input type="text" class="form-control" id="end" placeholder="Ingresa el destino">
+              <span id="ruta" class="input-group-addon background-icon">
+                <i class="fa fa-arrow-right" aria-hidden="true"></i>
+              </span>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+    <div id="container-rate" class="col-xs-12 col-sm-6 col-md-4 col-lg-4 hiden">
+      <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 container-form">
+        <div class="col-xs-12 col-lg-12 margin">
+          <h5 class="margin-bottom">Tus opciones</h5>
+        </div>
+        <div id="prices" class="col-xs-12 col-lg-12 margin"></div>
+        <div class="col-xs-12 col-lg-12 margin background-icon">
+          Registrate para viajar <i class="fa fa-arrow-right" aria-hidden="true"></i>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- Modal -->
+  <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+          <h4 class="modal-title" id="myModalLabel">Modal title</h4>
+        </div>
+        <div class="modal-body">
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        </div>
       </div>
     </div>
   </div>
+  <!-- Import jQuery, Bootstrap.js, API Google map -->
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCZMVcemBGrPtS3Mhjh31FQaC57pjRmuwM&callback=initMap&&libraries=places"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-  <script type="text/javascript" src="js/splash.js"></script>
+  <script type="text/javascript" src="js/app.js"></script>
 </body>
 
 </html>

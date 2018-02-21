@@ -1,44 +1,65 @@
 /* Inicializa y agrega el mapa cuando se carga la página web */
 initMap = () => {
-  // variable para la ruta
+  /* variable para la ruta */
   var directionsService = new google.maps.DirectionsService;
   var directionsDisplay = new google.maps.DirectionsRenderer;
 
+  let laboratoriaLima = {
+    lat: -12.1260837,
+    lng: -77.0228761
+  };
+
   let map = new google.maps.Map(document.getElementById('map'), {
-    zoom: 6,
+    zoom: 10,
+    center: laboratoriaLima
   });
 
-  /* Al cargar la pagina se pedirá permiso para saber la ubicación geografica del user */
-  var infoWindow = new google.maps.InfoWindow({map: map});
+  let marker = new google.maps.Marker({
+    position: laboratoriaLima,
+    map: map,
+    icon: 'assets/images/bicicleta.png'
+  });
 
-  // Try HTML5 geolocation.
-  if (navigator.geolocation) {
-    navigator.geolocation.getCurrentPosition(function(position) {
-      var pos = {
-        lat: position.coords.latitude,
-        lng: position.coords.longitude
-      };
+  /* Se dibujará la ruta */
+  directionsDisplay.setMap(map);
 
-      infoWindow.setPosition(pos);
-      infoWindow.setContent('Location found.');
-      map.setCenter(pos);
-    }, function() {
-      handleLocationError(true, infoWindow, map.getCenter());
-    });
-  } else {
-    // Browser doesn't support Geolocation
-    handleLocationError(false, infoWindow, map.getCenter());
-  }
+  /* Autocompletar */
+  let startAutoComp = (document.getElementById('start'));
+  let autocompliteStart = new google.maps.places.Autocomplete(startAutoComp);
+  autocompliteStart.bindTo('bounds', map);
+  let EndAutoComp = (document.getElementById('end'));
+  let autocompliteEnd = new google.maps.places.Autocomplete(EndAutoComp);
+  autocompliteEnd.bindTo('bounds', map);
 
-  let functionError = (error) =>{
-    alert('We have an error locating your location');
-  };
-  
-  let search = () => {
-    event.preventDefault(event);
+  /* Evento boton trazar ruta */
+  document.getElementById('ruta').addEventListener('click', () => { 
+    calculateAndDisplayRoute(directionsService, directionsDisplay);
+    getPrices();
 
-    if (navigator.geolocation) {
-      navigator.geolocation.getCurrentPosition(functionSuccess, functionError);
-    }
-  };
+    /* Visibilisando el contenedor price rate */
+    document.getElementById('container-departure').classList.add('hiden');
+    document.getElementById('container-form-input').setAttribute('id', 'container-new-input');
+    document.getElementById('container-rate').classList.toggle('hiden');
+    document.getElementById('prices').appendChild();
+  });
 };
+
+/* Calcular la ruta */
+function calculateAndDisplayRoute(directionsService, directionsDisplay) {
+  directionsService.route({
+    origin: document.getElementById('start').value,
+    destination: document.getElementById('end').value,
+    travelMode: 'DRIVING'
+  }, function(response, status) {
+    if (status === 'OK') {
+      directionsDisplay.setDirections(response);
+    } else {
+      window.alert('Directions request failed due to ' + status);
+    }
+  });
+
+  /* Calcular los precios */
+  function getPrices() {
+    
+  }
+}
