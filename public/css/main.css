@@ -6,6 +6,20 @@
   box-sizing: border-box;
 }
 
+.flex {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.padding {
+  padding: 0;
+}
+
+.margin-none {
+  margin: 0;
+}
+
 /* Style for header */
 
 .navbar-container {
@@ -61,9 +75,14 @@
   margin-bottom: 1rem;
 }
 
+.container-title {
+  border-bottom: 1px solid #9a287c;
+}
+
 .background-icon {
   background: #9a287c;
-  margin: 1px solid #9a287c;
+  padding: 1rem;
+  color: #fff;
   cursor: pointer;
 }
 
@@ -73,6 +92,15 @@
 
 .margin-bottom {
   margin-bottom: 1px solid #f1f1f1;
+}
+
+.container-estimate {
+  padding-top: 0.5rem;
+  padding-bottom: 0.5rem;
+}
+
+.container-estimate:hover {
+  background: rgba(2, 32, 32, 0.3);
 }
 
 .hiden {

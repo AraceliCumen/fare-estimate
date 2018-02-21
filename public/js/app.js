@@ -44,24 +44,24 @@ initMap = () => {
     document.getElementById('container-rate').classList.toggle('hiden');
 
     $('#prices').append(`
-    <div>
-    <p>${data.prices[0].display_name}</p>
-    <p>${data.prices[0].estimate}</p>
+    <div class="col-xs-12 col-lg-12 flex container-estimate">
+    <p class="col-xs-6 col-lg-6 margin-none">${data.prices[0].display_name}</p>
+    <p class="col-xs-6 col-lg-6 margin-none">${data.prices[0].estimate}</p>
     </div>
-    <div>
-    <p>${data.prices[1].display_name}</p>
-    <p>${data.prices[1].estimate}</p>
+    <div class="col-xs-12 col-lg-12 flex container-estimate">
+    <p class="col-xs-6 col-lg-6 margin-none">${data.prices[1].display_name}</p>
+    <p class="col-xs-6 col-lg-6 margin-none">${data.prices[1].estimate}</p>
     </div>
-    <div>
-    <p>${data.prices[2].display_name}</p>
-    <p>${data.prices[2].estimate}</p>
+    <div class="col-xs-12 col-lg-12 flex container-estimate">
+    <p class="col-xs-6 col-lg-6 margin-none">${data.prices[2].display_name}</p>
+    <p class="col-xs-6 col-lg-6 margin-none">${data.prices[2].estimate}</p>
     </div>
-    <div>
-    <p>${data.prices[3].display_name}</p>
-    <p>${data.prices[3].estimate}</p>
+    <div class="col-xs-12 col-lg-12 flex container-estimate">
+    <p class="col-xs-6 col-lg-6 margin-none">${data.prices[3].display_name}</p>
+    <p class="col-xs-6 col-lg-6 margin-none">${data.prices[3].estimate}</p>
     </div>
     `);
-    // codeAddress();
+    codeAddress();
   });
 };
 
