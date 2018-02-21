@@ -8,7 +8,7 @@ let data = {
       'high_estimate': 15,
       'low_estimate': 13,
       'duration': 1080,
-      'estimate': '$13-15',
+      'estimate': 'S/.13-15',
       'currency_code': 'USD'
     },
     {
@@ -19,7 +19,7 @@ let data = {
       'high_estimate': 17,
       'low_estimate': 13,
       'duration': 1080,
-      'estimate': '$13-17',
+      'estimate': 'S/.13-17',
       'currency_code': 'USD'
     },
     {
@@ -30,7 +30,7 @@ let data = {
       'high_estimate': 26,
       'low_estimate': 20,
       'duration': 1080,
-      'estimate': '$20-26',
+      'estimate': 'S/.20-26',
       'currency_code': 'USD'
     },
     {
@@ -41,7 +41,7 @@ let data = {
       'high_estimate': 38,
       'low_estimate': 30,
       'duration': 1080,
-      'estimate': '$30-38',
+      'estimate': 'S/.30-38',
       'currency_code': 'USD'
     },
     {
@@ -52,7 +52,7 @@ let data = {
       'high_estimate': 43,
       'low_estimate': 43,
       'duration': 1080,
-      'estimate': '$43.10',
+      'estimate': 'S/.43.10',
       'currency_code': 'USD'
     },
   ],

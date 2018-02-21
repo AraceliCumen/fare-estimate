@@ -35,16 +35,33 @@ initMap = () => {
   autocompliteEnd.bindTo('bounds', map);
 
   /* Evento boton trazar ruta */
-  document.getElementById('ruta').addEventListener('click', () => { 
+  $('#ruta').on('click', () => { 
     calculateAndDisplayRoute(directionsService, directionsDisplay);
 
     /* Visibilisando el contenedor price rate */
     document.getElementById('container-departure').classList.add('hiden');
     document.getElementById('container-form-input').setAttribute('id', 'container-new-input');
     document.getElementById('container-rate').classList.toggle('hiden');
-    // document.getElementById('prices').appendChild();
 
-    codeAddress();
+    $('#prices').append(`
+    <div>
+    <p>${data.prices[0].display_name}</p>
+    <p>${data.prices[0].estimate}</p>
+    </div>
+    <div>
+    <p>${data.prices[1].display_name}</p>
+    <p>${data.prices[1].estimate}</p>
+    </div>
+    <div>
+    <p>${data.prices[2].display_name}</p>
+    <p>${data.prices[2].estimate}</p>
+    </div>
+    <div>
+    <p>${data.prices[3].display_name}</p>
+    <p>${data.prices[3].estimate}</p>
+    </div>
+    `);
+    // codeAddress();
   });
 };
 
@@ -75,3 +92,4 @@ function codeAddress() {
   let objDestination = 'https://maps.googleapis.com/maps/api/geocode/json?address=' + end + 'key=AIzaSyCMShnY5TzaDxqu1P0D0q6WWfbnQJ4ZC4c';
   console.log(obj);
 }
+
